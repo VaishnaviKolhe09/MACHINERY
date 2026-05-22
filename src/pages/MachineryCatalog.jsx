@@ -23,7 +23,7 @@ const MachineryCatalog = () => {
         </div>
       </section>
 
-      {/* --- CATEGORY REFINEMENT BAR (Sticky Desktop / Scrollable Mobile) --- */}
+      {/* --- CATEGORY REFINEMENT BAR --- */}
       <div className="bg-white border-b border-slate-200 sticky top-[79px] z-30 shadow-sm overflow-x-auto whitespace-nowrap scrollbar-none">
         <div className="container mx-auto px-4 sm:px-6 py-4 flex gap-2 md:justify-center min-w-max md:min-w-0">
           <button 
@@ -64,21 +64,25 @@ const MachineryCatalog = () => {
                     className="flex flex-col bg-white border border-slate-200/60 hover:border-amber-500/30 hover:shadow-2xl transition-all duration-300 group rounded-2xl overflow-hidden"
                   >
                     {/* Visual Render Wrapper */}
-                    <div className="h-48 sm:h-52 bg-slate-50 overflow-hidden relative">
-                      <img src={machine.img} alt={machine.name} loading="lazy" className="w-full h-full object-content group-hover:scale-105 transition-transform duration-500" />
+                    <div className="h-56 bg-slate-50 overflow-hidden relative flex items-center justify-center p-4 border-b border-slate-100">
+                      <img src={machine.img} alt={machine.name} loading="lazy" className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
                     </div>
 
                     {/* Content Meta Space */}
                     <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                      {/* FIXED: Removed line-clamp-1 and replaced with normal tracking rules for full display wrap */}
                       <h3 className="text-base sm:text-lg font-black text-[#0f172a] uppercase tracking-wide group-hover:text-[#f59e0b] transition-colors mb-2 leading-snug break-words">
                         {machine.name}
                       </h3>
                       
-                      {/* <p className="text-slate-500 text-xs leading-relaxed mb-4 line-clamp-2">{machine.desc}</p> */}
+                      {/* Price Element */}
+                      <div className="mb-4">
+                        <span className="text-xs font-black px-3 py-1 bg-amber-50 text-[#f59e0b] border border-amber-200/60 rounded-xl inline-block">
+                          {machine.price}
+                        </span>
+                      </div>
                       
                       {/* Tech Checklist Params */}
-                      <div className="space-y-1 mb-6 mt-auto border-t border-slate-50 pt-4">
+                      <div className="space-y-1 mb-6 mt-auto border-t border-slate-100 pt-4">
                         {machine.specs.slice(0, 2).map((sp, idx) => (
                           <div key={idx} className="text-[10px] uppercase font-black text-slate-400 flex items-center gap-1.5 truncate">
                             <span className="w-1 h-1 bg-[#f59e0b] rounded-full flex-shrink-0"></span> {sp}
@@ -88,7 +92,7 @@ const MachineryCatalog = () => {
                       
                       {/* Interactive Call Button Link */}
                       <span className="text-[9px] sm:text-[10px] font-black text-[#f59e0b] uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition-transform mt-2">
-                        Request Blueprint Layout & Price <ArrowRight size={12} className="flex-shrink-0" />
+                        View Details & Request Blueprint <ArrowRight size={12} className="flex-shrink-0" />
                       </span>
                     </div>
                   </Link>

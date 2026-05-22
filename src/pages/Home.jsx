@@ -101,7 +101,7 @@ const Home = () => {
                   src={machine.img} 
                   alt={machine.name} 
                   loading="lazy" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" 
                 />
                 <span className="absolute top-3 left-3 bg-[#0f172a] text-[#f59e0b] border border-slate-800 px-2.5 py-1 text-[8px] sm:text-[9px] font-black uppercase tracking-widest rounded-lg">
                   Top Seller
@@ -109,10 +109,12 @@ const Home = () => {
               </div>
               
               <div className="p-5 sm:p-6 flex flex-col flex-grow space-y-4">
-                <h3 className="text-base sm:text-lg font-black uppercase text-[#0f172a] group-hover:text-[#f59e0b] transition-colors line-clamp-1 tracking-wide">
+                {/* line-clamp-1 removed to show full title */}
+                <h3 className="text-base sm:text-lg font-black uppercase text-[#0f172a] group-hover:text-[#f59e0b] transition-colors tracking-wide">
                   {machine.name}
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                {/* line-clamp-3 removed to show full description */}
+                <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                   {machine.desc}
                 </p>
                 
