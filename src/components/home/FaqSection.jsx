@@ -1,3 +1,4 @@
+// FaqSection.jsx
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
@@ -11,31 +12,53 @@ const FaqSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#faf9f6]">
+    <section className="py-10 bg-[var(--background)]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <div className="text-center mb-16">
-          <span className="text-[#f59e0b] font-black uppercase tracking-widest text-xs block mb-3"> TECHNICAL BRIEFINGS</span>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#0f172a] uppercase tracking-tight">FREQUENTLY ASKED QUESTIONS</h2>
+        
+        {/* --- HEADER TITLE SECTION --- */}
+        <div className="text-center mb-10">
+          <span className="text-[var(--primary)] font-black uppercase tracking-widest text-xs block mb-3">
+            TECHNICAL BRIEFINGS
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-black text-[var(--text-dark)] uppercase tracking-tight">
+            FREQUENTLY ASKED QUESTIONS
+          </h2>
         </div>
 
+        {/* --- ACCORDION GRID LAYOUT --- */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <div 
+              key={idx} 
+              className="bg-[var(--surface)] border border-[var(--border)] rounded-2xl overflow-hidden shadow-sm"
+            >
+              {/* Accordion Trigger Button */}
               <button 
                 onClick={() => setActive(active === idx ? null : idx)}
-                className="w-full p-6 text-left flex justify-between items-center bg-white hover:bg-slate-50 transition-colors"
+                className="w-full p-6 text-left flex justify-between items-center bg-[var(--surface)] hover:bg-[var(--accent)] hover:bg-opacity-40 transition-colors"
               >
-                <span className="font-bold text-sm sm:text-base uppercase tracking-wide text-[#0f172a]">{faq.q}</span>
-                {active === idx ? <Minus size={18} className="text-[#f59e0b]" /> : <Plus size={18} className="text-[#f59e0b]" />}
+                <span className="font-bold text-sm sm:text-base uppercase tracking-wide text-[var(--text-dark)] pr-4">
+                  {faq.q}
+                </span>
+                <div className="flex-shrink-0">
+                  {active === idx ? (
+                    <Minus size={18} className="text-[var(--primary)]" />
+                  ) : (
+                    <Plus size={18} className="text-[var(--primary)]" />
+                  )}
+                </div>
               </button>
+              
+              {/* Accordion Content Block */}
               {active === idx && (
-                <div className="p-6 pt-0 text-slate-500 text-sm border-t border-slate-100 bg-slate-50/50 leading-relaxed">
+                <div className="p-6 pt-0 text-[var(--text-muted)] text-sm border-t border-[var(--border)] bg-[var(--background)] bg-opacity-50 leading-relaxed">
                   {faq.a}
                 </div>
               )}
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

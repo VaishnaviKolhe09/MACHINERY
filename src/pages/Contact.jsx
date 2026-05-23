@@ -47,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#faf9f6] text-[#1e293b] min-h-screen pb-24">
+    <div className="bg-[#faf9f6] text-[#1e293b] min-h-screen pt-12 pb-24">
       {/* --- HERO SECTION --- */}
       <section className="relative h-[45vh] flex items-center justify-center bg-[#0f172a] text-center px-6 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1920&q=80')" }}></div>
@@ -170,85 +170,112 @@ const Contact = () => {
           </div>
 
           {/* Large Scale Infrastructure Plant RFP Form */}
-          <div className="md:col-span-7 bg-white border border-slate-200 p-8 rounded-3xl shadow-sm h-fit">
-            <h3 className="font-black text-xl text-[#0f172a] uppercase tracking-tight mb-2">SCHEDULE AN INFRASTRUCTURE DEPLOYMENT CALL</h3>
-            <p className="text-xs text-slate-400 uppercase font-black mb-6"> OUR INDUSTRIAL CONSULTANTS WILL EVALUATE YOUR REQUIREMENTS WITHIN 24 HOURS.</p>
-            
-            {/* Success Message Alert Box */}
-            {isSubmitted && (
-              <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-bold uppercase tracking-wider text-center">
-                ✓ Message sent successfully! Our team will contact you shortly.
-              </div>
-            )}
+          <div className="md:col-span-7 space-y-6">
+            <div className="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm h-fit">
+              <h3 className="font-black text-xl text-[#0f172a] uppercase tracking-tight mb-2">SCHEDULE AN INFRASTRUCTURE DEPLOYMENT CALL</h3>
+              <p className="text-xs text-slate-400 uppercase font-black mb-6"> OUR INDUSTRIAL CONSULTANTS WILL EVALUATE YOUR REQUIREMENTS WITHIN 24 HOURS.</p>
+              
+              {/* Success Message Alert Box */}
+              {isSubmitted && (
+                <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-bold uppercase tracking-wider text-center">
+                  ✓ Message sent successfully! Our team will contact you shortly.
+                </div>
+              )}
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input 
-                type="text" 
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="First Name" 
-                required
-                className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
-              />
-              <input 
-                type="text" 
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Last Name" 
-                required
-                className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
-              />
-              <input 
-                type="email" 
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Corporate Email" 
-                required
-                className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
-              />
-              <input 
-                type="text" 
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleChange}
-                placeholder="Company Name" 
-                required
-                className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
-              />
-              <div className="sm:col-span-2">
-                <select 
-                  name="productionOutput"
-                  value={formData.productionOutput}
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input 
+                  type="text" 
+                  name="firstName"
+                  value={formData.firstName}
                   onChange={handleChange}
+                  placeholder="First Name" 
                   required
-                  className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]"
-                >
-                  <option value="">Select Expected Target Production Output</option>
-                  <option value="Under 200 kg/hr batch">Under 200 kg/hr batch</option>
-                  <option value="500 kg/hr - 1 Ton/hr line">500 kg/hr - 1 Ton/hr line</option>
-                  <option value="Turnkey Full Scale Automated Facility">Turnkey Full Scale Automated Facility</option>
-                </select>
-              </div>
-              <div className="sm:col-span-2">
-                <textarea 
-                  rows="4" 
-                  name="message"
-                  value={formData.message}
+                  className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
+                />
+                <input 
+                  type="text" 
+                  name="lastName"
+                  value={formData.lastName}
                   onChange={handleChange}
-                  placeholder="Describe layout customization options, material grade changes or custom extrusion die demands..." 
+                  placeholder="Last Name" 
                   required
-                  className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]"
-                ></textarea>
+                  className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
+                />
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Corporate Email" 
+                  required
+                  className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
+                />
+                <input 
+                  type="text" 
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  placeholder="Company Name" 
+                  required
+                  className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]" 
+                />
+                <div className="sm:col-span-2">
+                  <select 
+                    name="productionOutput"
+                    value={formData.productionOutput}
+                    onChange={handleChange}
+                    required
+                    className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]"
+                  >
+                    <option value="">Select Expected Target Production Output</option>
+                    <option value="Under 200 kg/hr batch">Under 200 kg/hr batch</option>
+                    <option value="500 kg/hr - 1 Ton/hr line">500 kg/hr - 1 Ton/hr line</option>
+                    <option value="Turnkey Full Scale Automated Facility">Turnkey Full Scale Automated Facility</option>
+                  </select>
+                </div>
+                <div className="sm:col-span-2">
+                  <textarea 
+                    rows="4" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Describe layout customization options, material grade changes or custom extrusion die demands..." 
+                    required
+                    className="text-xs font-bold p-3 border border-slate-200 bg-slate-50 rounded-xl w-full focus:outline-none focus:border-[#f59e0b]"
+                  ></textarea>
+                </div>
+                <div className="sm:col-span-2">
+                  <button type="submit" className="w-full bg-[#0f172a] hover:bg-[#f59e0b] text-white font-black uppercase text-xs tracking-widest py-4 rounded-xl transition-colors shadow-lg">
+                    Submit Formal Tender / Request For Proposal
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            {/* --- HEAD OFFICE ADDRESS SECTION --- */}
+            <div className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] border border-slate-800 p-8 rounded-3xl shadow-xl text-white">
+              <span className="text-[#f59e0b] font-black text-[10px] uppercase tracking-widest block mb-1">CENTRAL ADMINISTRATION</span>
+              <h3 className="font-black text-xl uppercase tracking-tight mb-4">HEAD OFFICE</h3>
+              <div className="space-y-4">
+                <div className="flex gap-3 items-start">
+                  <MapPin className="text-[#f59e0b] flex-shrink-0 mt-0.5" size={16} />
+                  <div>
+                    <h4 className="font-black text-[11px] uppercase tracking-wider text-slate-300">Corporate Address:</h4>
+                    <p className="text-xs text-slate-400 font-serif mt-0.5">
+                      MR Food Machinery, Plot No. D-68, Malegaon MIDC Sinnar, Tal.- Sinnar, Dist.- Nashik, Maharashtra, 422103.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start">
+                  <Phone className="text-[#f59e0b] flex-shrink-0 mt-0.5" size={16} />
+                  <div>
+                    <h4 className="font-black text-[11px] uppercase tracking-wider text-slate-300">Central Hotline:</h4>
+                    <p className="text-xs text-slate-400 font-bold mt-0.5">+91 9930090554 / +91 7057357916</p>
+                  </div>
+                </div>
               </div>
-              <div className="sm:col-span-2">
-                <button type="submit" className="w-full bg-[#0f172a] hover:bg-[#f59e0b] text-white font-black uppercase text-xs tracking-widest py-4 rounded-xl transition-colors shadow-lg">
-                  Submit Formal Tender / Request For Proposal
-                </button>
-              </div>
-            </form>
+            </div>
+
           </div>
 
         </div>

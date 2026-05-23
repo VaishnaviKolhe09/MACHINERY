@@ -12,7 +12,7 @@ const MachineryCatalog = () => {
     : machineryCategories.filter(cat => cat.id === activeCategory);
 
   return (
-    <div className="bg-[#faf9f6] min-h-screen pb-24 overflow-x-hidden">
+    <div className="bg-[#faf9f6] min-h-screen pt-10 pb-24 overflow-x-hidden">
       {/* --- HERO SECTION --- */}
       <section className="relative h-[35vh] sm:h-[45vh] flex items-center justify-center bg-[#0f172a] text-center px-4 sm:px-6 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity scale-105" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80')" }}></div>
