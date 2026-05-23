@@ -30,7 +30,7 @@ const Navbar = () => {
           <img 
             src={mrLogo} 
             alt="MR Food Machinery Logo" 
-            className="flex-shrink-0 w-24 h-24 sm:w-24 sm:h-24 object-contain object-left group-hover:scale-105 transition-transform duration-300" 
+            className="flex-shrink-0 w-16 h-16 sm:w-18 sm:h-18 object-contain object-left group-hover:scale-105 transition-transform duration-300" 
           />
           <div className="truncate">
             <span className="font-black tracking-tighter text-lg sm:text-base md:text-lg block leading-none uppercase text-[var(--text-dark)]">
@@ -87,7 +87,7 @@ const Navbar = () => {
 
       {/* --- FIX RESPONSIVE MOBILE DRAWER SLIDEOVER --- */}
       <div
-        className={`fixed inset-y-0 right-0 w-full max-w-sm bg-[var(--surface)] transform shadow-2xl transition-all duration-300 ease-in-out md:hidden z-40 flex flex-col justify-between pt-28 pb-8 px-6 overflow-y-auto h-screen ${
+        className={`fixed inset-y-0 left-0 w-full max-w-sm bg-[var(--surface)] transform shadow-2xl transition-all duration-300 ease-in-out md:hidden z-40 flex flex-col justify-between pt-28 pb-8 px-6 overflow-y-auto h-screen ${
           isOpen ? "translate-x-0 opacity-100 block" : "translate-x-full opacity-0 pointer-events-none hidden"
         }`}
       >

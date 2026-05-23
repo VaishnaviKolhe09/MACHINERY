@@ -17,11 +17,11 @@ const Footer = () => {
           {/* --- BRAND LOGO BLOCK --- */}
           <div className="space-y-4">
             {/* Yahan se negative margin (-ml-6 -mt-6) ko remove kar diya hai taaki edge grid line se perfect horizontal alignment me rahe */}
-            <Link to="/" className="flex items-center gap-2 group min-w-0 -mb-3 -mt-10 ml-0 pl-0">
+            <Link to="/" className="flex items-center gap-2 group min-w-0 sm:-mb-3 -mt-10 ml-0 pl-0">
               <img 
                 src={mrLogo} 
                 alt="MR Food Machinery Logo" 
-                className="flex-shrink-0 w-24 h-24 object-contain object-left transition-transform duration-300 group-hover:scale-105" 
+                className="flex-shrink-0 w-16 h-16 sm:w-18 sm:h-18 object-contain object-left transition-transform duration-300 group-hover:scale-105" 
               />
               <div className="truncate">
                 <span className="font-black tracking-tighter text-base block leading-none uppercase text-[var(--text-dark)]">
