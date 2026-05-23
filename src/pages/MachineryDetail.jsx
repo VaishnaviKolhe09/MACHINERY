@@ -22,7 +22,7 @@ const MachineryDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#faf9f6] pb-24">
+    <div className="min-h-screen bg-[#faf9f6] pt-12 pb-24">
       {/* --- HERO BANNER --- */}
       <section className="relative h-[30vh] flex items-center justify-center bg-[#0f172a] text-center px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-cover bg-center" style={{ backgroundImage: `url(${machine.img})` }}></div>
@@ -47,7 +47,7 @@ const MachineryDetail = () => {
           {/* Right Block: Tech Specifics & Pricing Panel */}
           <div className="lg:col-span-7">
             <span className="text-[#f59e0b] font-black uppercase tracking-[0.2em] text-[10px] block mb-2"> COMMERCIALLY CERTIFIED SYSTEMS</span>
-            <h1 className="text-3xl md:text-5xl font-black text-[#0f172a] uppercase tracking-tight leading-none mb-4 italic">{machine.name}</h1>
+            <h1 className="text-2xl md:text-4xl font-black text-[#0f172a] uppercase tracking-tight leading-none mb-4 italic">{machine.name}</h1>
             
             {/* Commercial Valuation Container */}
             <div className="mb-6 flex items-center gap-2 bg-amber-50 border border-amber-200 px-4 py-3 rounded-xl w-fit">

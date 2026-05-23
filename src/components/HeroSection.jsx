@@ -1,94 +1,152 @@
+// HeroSection.jsx
 import React from 'react';
-import { ArrowRight, Play, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ArrowRight, Settings, Shield, Zap, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[var(--background)] py-20 lg:py-0">
+    // Base core background using raw variable injection
+    <section className="relative min-h-screen flex items-center bg-[var(--background)] overflow-hidden px-4 sm:px-6 lg:px-8 py-24 lg:py-24">
       
-      {/* --- Decorative Elements --- */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[var(--surface)] z-0 hidden lg:block"></div>
-      <div className="absolute -bottom-24 -left-24 w-72 h-72 md:w-96 md:h-96 bg-[var(--primary)] opacity-5 blur-[120px] rounded-full"></div>
+      {/* --- ULTRA-PREMIUM AMBIENT BACKGROUND SYSTEM --- */}
+      {/* Industrial Overlay Image with Deep Cinematic Luminosity */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-[0.04] mix-blend-multiply scale-110 pointer-events-none" 
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80')" }}
+      />
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+      {/* Futuristic Neo-Grid Vector (Fine lines using border variable) */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_60%,transparent_100%)] opacity-40" />
+      
+      {/* High-End Tech Glow Points */}
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-gradient-to-tr from-[var(--primary)]/10 to-transparent rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 right-[-10%] w-[500px] h-[500px] bg-gradient-to-br from-[var(--primary-light)]/10 to-[var(--accent)]/30 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-[var(--surface)] rounded-full blur-[100px] pointer-events-none" />
+
+      {/* --- CORE CONTENT LAYOUT --- */}
+      <div className="relative z-10 container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+        
+        {/* LEFT COLUMN: Industrial Authority, Clear Value Proposition & Actionable CTAs */}
+        <div className="lg:col-span-7 space-y-8 text-left max-w-3xl mx-auto lg:mx-0">
           
-          {/* --- Left Content: Text & CTA --- */}
-          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 order-2 lg:order-1 text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start gap-3">
-              <span className="w-8 md:w-12 h-[2px] bg-[var(--primary)]"></span>
-              <span className="text-[var(--primary)] font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs">
-                Est. 1995 | Premium Food Craft
-              </span>
-            </div>
-
-            <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[var(--secondary)] leading-[1] md:leading-[0.9] uppercase tracking-tighter">
-              Authentic <br />
-              <span className="text-[var(--primary)] italic font-serif">Flavor</span> <br />
-              Legacy.
+          {/* Futuristic Premium Tag */}
+          <div className="inline-flex items-center gap-2 bg-[var(--surface)] border border-[var(--border)] backdrop-blur-md px-4 py-2 rounded-xl shadow-sm group">
+            <Sparkles size={14} className="text-[var(--primary)] animate-pulse" />
+            <span className="text-[var(--text-muted)] font-bold tracking-[0.25em] text-[10px] uppercase">
+              Industrial Grade <span className="text-[var(--text-dark)] font-black">MR FOOD MACHINERY</span>
+            </span>
+          </div>
+          
+          {/* High-Impact Master Title */}
+          <div className="space-y-2">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-[var(--secondary)] uppercase tracking-tighter leading-[0.85]">
+              COMMERCIAL
             </h1>
-
-            <p className="text-[var(--text-muted)] text-base md:text-xl font-serif italic max-w-lg mx-auto lg:mx-0 leading-relaxed border-l-4 border-[var(--primary)] pl-6 text-left">
-              "Experience the gold standard of Naina Seviyan. Where every strand is roasted to perfection using heritage techniques."
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4">
-             <Link to="/products" className="w-full sm:w-auto">
-    <button className="w-full bg-[var(--secondary)] text-[var(--text-light)] px-8 md:px-10 py-4 md:py-5 font-black uppercase tracking-[0.1em] md:tracking-[0.2em] flex items-center justify-center gap-4 hover:bg-[var(--primary)] transition-all group shadow-xl text-sm text-nowrap">
-      Explore Catalog <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-    </button>
-  </Link>
-              
-              {/* <button className="flex items-center gap-4 group">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-[var(--border)] flex items-center justify-center group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)] transition-all">
-                  <Play size={18} className="text-[var(--secondary)] group-hover:text-white fill-current ml-1" />
-                </div>
-                <span className="font-black uppercase tracking-widest text-[10px] md:text-xs text-[var(--secondary)]">Watch Process</span>
-              </button> */}
-            </div>
-
-            {/* Micro Stats */}
-            <div className="grid grid-cols-2 gap-4 md:gap-8 pt-8 border-t border-[var(--border)] max-w-md mx-auto lg:mx-0">
-              <div className="flex items-center gap-3 justify-center lg:justify-start">
-                <Award className="text-[var(--primary)] flex-shrink-0" size={20} md={24} />
-                <span className="text-[9px] md:text-[10px] font-black uppercase tracking-tighter leading-tight text-left">ISO 22000 <br/>Certified</span>
-              </div>
-              <div className="flex items-center gap-3 justify-center lg:justify-start">
-                <Globe className="text-[var(--primary)] flex-shrink-0" size={20} md={24} />
-                <span className="text-[9px] md:text-[10px] font-black uppercase tracking-tighter leading-tight text-left">Exporting to <br/>15+ Countries</span>
-              </div>
-            </div>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-[0.85]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)]">
+                FOOD MACHINES
+              </span>
+            </h1>
+           
+          </div>
+          
+          {/* Sophisticated Corporate Description */}
+          <p className="text-[var(--text-dark)] opacity-90 text-base sm:text-md md:text-lg leading-relaxed max-w-2xl font-normal">
+            High-output engineering for modern food factories. Specializing in automated noodle lines, non-IBR steam boilers, heavy stainless steel mixing vessels, and turnkey kitchen processing setups engineered to international safety standards.
+          </p>
+          
+          {/* Ultra-Modern Interactive CTA Row */}
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 items-center w-full sm:w-auto">
+            <Link 
+              to="/machinery" 
+              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-light)] text-[var(--text-light)] font-black uppercase tracking-[0.15em] text-xs rounded-xl hover:opacity-90 transition-all duration-300 shadow-xl shadow-[var(--primary)]/20 hover:-translate-y-1 flex items-center justify-center gap-3 group"
+            >
+              View Machine Catalog 
+              <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+            </Link>
+            
+            <Link 
+              to="/contact" 
+              className="w-full sm:w-auto px-8 py-4 bg-[var(--surface)] backdrop-blur border border-[var(--border)] text-[var(--text-dark)] font-black uppercase tracking-[0.15em] text-xs rounded-xl hover:bg-[var(--accent)] transition-all duration-300 flex items-center justify-center gap-2 group"
+            >
+              Request Plant Layout RFP
+            </Link>
           </div>
 
-          {/* --- Right Content: Product Visual --- */}
-          <div className="w-full lg:w-1/2 relative order-1 lg:order-2 mt-10 lg:mt-0">
-            {/* Hexagon Clip Backdrop - Smaller on mobile */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full lg:w-[120%] lg:h-[120%] bg-[var(--primary)] opacity-10 clip-hexagon animate-pulse"></div>
-            
-            <div className="relative z-10 p-2 md:p-4">
-              <div className="relative aspect-square w-full max-w-[280px] sm:max-w-md mx-auto">
-                <img 
-                  src="/assets/naina_noodles.jpeg" 
-                  alt="Naina Roasted Seviyan" 
-                  className="w-full h-full object-cover shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                  style={{ clipPath: 'polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%)' }}
-                />
-                
-                {/* Floating Badge - Scaled for mobile */}
-                <div className="absolute -bottom-5 -left-5 md:-bottom-10 md:-left-10 bg-[var(--primary)] p-4 md:p-8 text-[var(--text-light)] shadow-2xl">
-                  <p className="text-2xl md:text-4xl font-black italic font-serif">100%</p>
-                  <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em]">Pure Wheat</p>
-                </div>
-              </div>
+          {/* Quick trust metrics row */}
+          <div className="pt-4 grid grid-cols-3 gap-4 border-t border-[var(--border)] max-w-md">
+            <div>
+              <p className="text-xl font-black text-[var(--text-dark)]">SUS 304</p>
+              <p className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-mono font-bold">Food-Grade Steel</p>
             </div>
-
-            {/* Background Decorative Text - Responsive visibility */}
-            <div className="absolute -right-10 top-0 text-[8rem] lg:text-[15rem] font-black text-[var(--surface)] z-0 select-none opacity-40 lg:opacity-100 hidden sm:block uppercase tracking-tighter">
-              Naina
+            <div>
+              <p className="text-xl font-black text-[var(--text-dark)]">CE & ISO</p>
+              <p className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-mono font-bold">Compliant Build</p>
+            </div>
+            <div>
+              <p className="text-xl font-black text-[var(--text-dark)]">24/7</p>
+              <p className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-mono font-bold">Technical Support</p>
             </div>
           </div>
 
         </div>
+
+        {/* RIGHT COLUMN: Asymmetric Floating Tech Cards */}
+        <div className="lg:col-span-5 relative w-full h-[450px] sm:h-[500px] flex items-center justify-center mt-10 lg:mt-0">
+          
+          {/* Decorative Cyber Ring in Center Background */}
+          <div className="absolute w-72 h-72 rounded-full border border-[var(--border)] pointer-events-none animate-[spin_40s_linear_infinite] flex items-center justify-center">
+            <div className="w-64 h-64 rounded-full border-2 border-dashed border-[var(--surface)]" />
+          </div>
+
+          {/* MACHINERY CARD 1: Automated Production Line Status */}
+          <div className="absolute top-4 left-4 sm:left-10 w-[85%] sm:w-[320px] bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 shadow-xl backdrop-blur-xl hover:border-[var(--primary)]/30 transition-all duration-500 group transform hover:-translate-y-1 z-20">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 rounded-xl bg-[var(--accent)] text-[var(--primary)] group-hover:rotate-45 transition-transform duration-500">
+                <Settings size={18} />
+              </div>
+              <div>
+                <h3 className="text-[var(--text-dark)] text-xs font-black uppercase tracking-wider">Noodle Automation</h3>
+                <p className="text-[10px] text-[var(--text-muted)] font-mono font-bold">HIGH-OUTPUT LINE</p>
+              </div>
+            </div>
+            <p className="text-[var(--text-muted)] text-xs leading-relaxed">
+              Fully automated mixing, rolling, steaming, and cutting belts with synchronized smart-sync PLC panels.
+            </p>
+            <div className="mt-4 flex items-center justify-between text-[9px] font-mono text-[var(--text-dark)] font-bold border-t border-[var(--border)] pt-3">
+              <span>OUTPUT: UP TO 10T/DAY</span>
+              <span className="text-emerald-600 flex items-center gap-1">
+                <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full animate-ping" /> READY
+              </span>
+            </div>
+          </div>
+
+          {/* MACHINERY CARD 2: Industrial Boilers and Thermal Vessels */}
+          <div className="absolute bottom-4 right-4 sm:right-10 w-[85%] sm:w-[320px] bg-white border border-[var(--border)] rounded-2xl p-6 shadow-xl backdrop-blur-md hover:border-[var(--primary)]/30 transition-all duration-500 group transform hover:-translate-y-1 z-10">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 rounded-xl bg-[var(--accent)] text-[var(--primary)]">
+                <Shield size={18} />
+              </div>
+              <div>
+                <h3 className="text-[var(--text-dark)] text-xs font-black uppercase tracking-wider">Non-IBR Boilers</h3>
+                <p className="text-[10px] text-[var(--text-muted)] font-mono font-bold">THERMAL SYSTEMS</p>
+              </div>
+            </div>
+            <p className="text-[var(--text-muted)] text-xs leading-relaxed">
+              Certified steam boilers and heavy jacketed cooking kettles built without compliance bottlenecks.
+            </p>
+            <div className="mt-4 flex items-center justify-between text-[9px] font-mono text-[var(--text-muted)] font-bold border-t border-[var(--border)] pt-3">
+              <span>MATERIAL: 100% STAINLESS STEEL</span>
+            </div>
+          </div>
+
+          {/* INDUSTRIAL BADGE 3: Floating Micro Badge */}
+          <div className="absolute top-1/2 left-[50%] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-[var(--secondary)] to-[var(--secondary-light)] text-[var(--text-light)] font-mono text-[10px] font-black px-3 py-1.5 rounded-lg shadow-xl z-30 flex items-center gap-1.5 tracking-wider uppercase animate-bounce pointer-events-none">
+            <Zap size={10} className="text-[var(--primary-light)]" fill="currentColor" /> CE CERTIFIED PLANTS
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
