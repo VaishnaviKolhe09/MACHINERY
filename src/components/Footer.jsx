@@ -38,7 +38,12 @@ const Footer = () => {
             </p>
             <div className="pt-2 flex flex-col gap-1">
               <span className="text-[10px] uppercase font-black text-[var(--text-muted)] opacity-70">Central Desk Email:</span>
-              <span className="text-[var(--text-dark)] font-bold tracking-wide">vsenterprises631@gmail.com</span>
+              <a 
+                href="mailto:vsenterprises631@gmail.com?subject=Inquiry%20from%20Website" 
+                className="text-[var(--text-dark)] font-bold tracking-wide hover:text-[var(--primary)] transition-colors inline-block"
+              >
+                vsenterprises631@gmail.com
+              </a>
             </div>
           </div>
 
@@ -74,46 +79,53 @@ const Footer = () => {
               Foundry Office
             </h5>
             <div className="space-y-4">
-              <div className="flex gap-3 items-start">
-                <MapPin size={16} className="text-[var(--primary)] mt-0.5 flex-shrink-0" />
-                <p className="text-[var(--text-muted)]">MR Food Machinery, Plot No. D-68, Malegaon MIDC Sinnar, Tal.- Sinnar, Dist.- Nashik, Maharashtra, 422103.</p>
-              </div>
+              {/* Google Maps Exact Verified Location Link */}
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Shree+Prasad+Industries+Plot+No+D+68+MIDC+Malegaon+Sinnar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-3 items-start group cursor-pointer"
+              >
+                <MapPin size={16} className="text-[var(--primary)] mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <p className="text-[var(--text-muted)] group-hover:text-[var(--primary)] transition-colors">
+                  Shree Prasad Industries, Plot No. D-68, Malegaon MIDC Sinnar, Tal.- Sinnar, Dist.- Nashik, Maharashtra, 422103.
+                </p>
+              </a>
               
-              {/* <div className="pt-2 border-t border-[var(--border)]">
-                <span className="inline-block bg-[var(--background)] text-[var(--text-dark)] text-[10px] font-mono font-bold px-2 py-0.5 rounded border border-[var(--border)] shadow-sm">
-                  GST: 27CDIPG6290F1ZF
-                </span>
-              </div> */}
-
-              <div className="flex gap-3 items-center pt-2 border-t border-[var(--border)]">
-                <Phone size={16} className="text-[var(--primary)] flex-shrink-0" />
+              {/* Phone Dialer Link */}
+              <a 
+                href="tel:+919930090554"
+                className="flex gap-3 items-center pt-2 border-t border-[var(--border)] group cursor-pointer inline-flex w-full"
+              >
+                <Phone size={16} className="text-[var(--primary)] flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
                   <p className="text-[9px] uppercase font-black text-[var(--text-muted)] opacity-70">Procurement Hotline:</p>
-                  <p className="text-[var(--text-dark)] font-black text-sm tracking-wide">+91 9930090554</p>
+                  <p className="text-[var(--text-dark)] font-black text-sm tracking-wide group-hover:text-[var(--primary)] transition-colors">
+                    +91 9930090554
+                  </p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
         </div>
 
         {/* --- BOTTOM BAR --- */}
-       <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] uppercase font-black tracking-widest text-[var(--text-muted)] text-center sm:text-left">
-  <div>
-    © {new Date().getFullYear()} MR Food Machinery. All Rights Reserved.
-  </div>
-  <div className="flex gap-6 text-[var(--text-muted)] opacity-80">
-    {/* <span className="hover:text-[var(--primary)] cursor-pointer transition-colors">ISO 9001:2015 Verified</span> */}
-    <a 
-      href="https://vaishnavikolhe.netlify.app/" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="hover:text-[var(--primary)] cursor-pointer transition-colors"
-    >
-      Designed by Vaishnavi Kolhe
-    </a>
-  </div>
-</div>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] uppercase font-black tracking-widest text-[var(--text-muted)] text-center sm:text-left">
+          <div>
+            © {new Date().getFullYear()} MR Food Machinery. All Rights Reserved.
+          </div>
+          <div className="flex gap-6 text-[var(--text-muted)] opacity-80">
+            <a 
+              href="https://vaishnavikolhe.netlify.app/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-[var(--primary)] cursor-pointer transition-colors"
+            >
+              Designed by Vaishnavi Kolhe
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
