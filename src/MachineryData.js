@@ -104,48 +104,40 @@ export const machineryCategories = [
         price: "Price on Request",
         isFeatured: false
       },
-      {
-        slug: "50-hz-automatic-pasta-making-machine",
-        name: "50 Hz Automatic Pasta Making Machine",
-        img: "/assets/50HzAutomaticPastaMakingMachine.jpg",
-        desc: "Continuous, heavy-line processing unit dynamically tuned to standard 50 Hz grids for flawless automated commercial pasta shaping.",
-        specs: ["Frequency: 50 Hz Standard", "Capacity: 200 kg/hr", "Automation: 100% Fully Automatic", "Cutting Unit: Pneumatic Variable Speed Control"],
-        price: "Price on Request",
-        isFeatured: false
-      },
-      {
-        slug: "stainless-steel-macaroni-die",
-        name: "Stainless Steel Macaroni Die",
-        img: "/assets/StainlessSteelMacaroniDie.jpg",
-        desc: "CNC-machined precision-grade replacement dies engineered with premium internal flow paths to avoid micro-fractures in pasta structural walls.",
-        specs: ["Material: Hardened SS 316 / Teflon Coated", "Precision: ±0.02mm CNC Cut", "Fitment: Universal Extruder Mounts", "Durability: Extended Wear-Life Rating"],
-        price: "Price on Request",
-        isFeatured: false
-      },
-      {
-        slug: "noodles-steamer-making-machine",
-        name: "Noodles Steamer Making Machine",
-        img: "/assets/noodledough.jpg",
-        desc: "Tunnel-type commercial conveyor steaming system designed to parboil fresh starch strands uniformly prior to the drying cycle.",
-        specs: ["Conveyor Width: 600 mm", "Heating Source: Direct Factory Steam Inlet", "Insulation: 50mm Glass Wool Packing", "Speed: Variable VFD Control"],
-        price: "Price on Request",
-        isFeatured: false
-      },
-      {
-        slug: "noodles-dryer",
-        name: "Industrial Noodles Dryer",
-        img: "/assets/IndustrialNoodlesDryer.jpg",
-        desc: "Multi-layered dynamic batch cabinet dryer utilizing hot-air cross circulation to bring product moisture down safely under 12%.",
-        specs: ["Tray Count: 48 / 96 Trays Option", "Temperature Range: 40°C - 120°C", "Circulation: Dual Axial Blowers", "Heat Source: Electric / Steam Radiator"],
-        price: "Price on Request",
-        isFeatured: false
-      },
+     
       {
         slug: "noodles-steamer-100-kg",
         name: "Noodles Steamer (100 kg Bulk)",
         img: "/assets/noodledough.jpg",
         desc: "Institutional stationary heavy pressure steaming vault crafted entirely out of thick SS 304 panels for bulk preparation loads up to 100 kg.",
         specs: ["Capacity: 100 kg per Cycle", "Gasket Type: High-Temperature Food Grade Silicone", "Working Pressure: 0.5 - 1.5 Bar", "Shelves: 10 Reinforced Grid Trays"],
+        price: "Price on Request",
+        isFeatured: false
+      },
+      {
+        slug: "100kg-mixer-grinder-gearbox",
+        name: "Commercial Mixer Grinder with Gearbox (100 kg)",
+        img: "/assets/100kg_mixer_grinder_with_gearbox.jpeg",
+        desc: "Heavy-duty commercial mixer grinder featuring a robust U-shaped stainless steel tank, powered by a high-torque motor and heavy-reduction gear system for effortless uniform blending.",
+        specs: ["Batch Capacity: 100 kg / Batch", "Structure: Stainless Steel Mixing Tank with MS Frame", "Drive System: Heavy Reduction Gearbox with Electric Motor", "Application: Bulk dough mixing and semi-solid food blending"],
+        price: "Price on Request",
+        isFeatured: false
+      },
+      {
+        slug: "pasta-making-machine-heavy-setup",
+        name: "Industrial Pasta Making Machine (50kg to 1000kg Setup)",
+        img: "/assets/PastaMakingmachine_50kg_to_1000kg_all_setup.jpeg",
+        desc: "Comprehensive heavy-duty industrial pasta and macaroni processing plant equipped with an advanced integrated control panel, multi-stage mixing, and conveyor line for mass production.",
+        specs: ["Capacity Range: 50 kg to 1000 kg/hr", "Control Panel: Fully centralized monitoring with PID controllers", "Material: Heavy-duty food-grade stainless steel construction", "Automation: Semi to Fully Automatic configurations"],
+        price: "Price on Request",
+        isFeatured: true
+      },
+      {
+        slug: "pani-puri-making-machine",
+        name: "Automatic Pani Puri Making Machine",
+        img: "/assets/PaniPurimakingmachine.jpeg",
+        desc: "Compact and highly efficient automated machine engineered for uniform rolling, cutting, and continuous output of perfect circular puri sheets.",
+        specs: ["Application: Pani Puri, Golgappa, and Papdi production", "Drive: Integrated motor with multi-roller sheet thickness adjustment", "Conveyor System: Food-grade green PVC conveyor belt", "Design: Space-saving robust frame structure"],
         price: "Price on Request",
         isFeatured: false
       }
@@ -156,15 +148,7 @@ export const machineryCategories = [
     name: "Fruit & Tomato Processing Plants",
     tagline: "Industrial washing, pulping, and thermal stabilization units.",
     items: [
-      {
-        slug: "tomato-processing-plants",
-        name: "Tomato Processing Turnkey Plant",
-        img: "/assets/TomatoProcessingTurnkeyPlant.jpg",
-        desc: "Complete end-to-end industrial integrated setup configuring automatic sortation, crushing, enzymatic cold-break extraction, and packing.",
-        specs: ["Output Scalability: 1 Ton to 5 Tons / Day", "Processes: Washing -> Crushing -> Pulping -> Pasteurized Filling", "CIP System: Integrated Auto Clean-In-Place", "Power Grid Required: 440V 3-Phase"],
-        price: "Price on Request",
-        isFeatured: true
-      },
+     
       {
         slug: "steam-jacketed-kettle",
         name: "Industrial Steam Jacketed Kettle",
@@ -174,30 +158,23 @@ export const machineryCategories = [
         price: "Price on Request",
         isFeatured: true
       },
-      {
-        slug: "fruit-crusher",
-        name: "Heavy Duty Fruit Crusher",
-        img: "/assets/HeavyDutyFruitCrusher.jpg",
-        desc: "High-velocity industrial hammer-mill design optimized to crush whole fruits, apples, and tomatoes into a pumpable structural slurry.",
-        specs: ["Motor Power: 7.5 HP Heavy Induction", "Milling Screen: Easily Changeable Perforated Slits", "Feed Style: Direct Overhead Safety Hopper", "Throughput: 1500 kg/hr Processing"],
-        price: "Price on Request",
-        isFeatured: false
-      },
-      {
-        slug: "stainless-steel-jacketed-pressure-vessel",
-        name: "Stainless Steel Jacketed Pressure Vessel",
-        img: "/assets/StainlessSteelNoodleDoughMixer.jpg",
-        desc: "Precision engineered structural containment chamber fabricated to manage complex sanitary thermal reactions under highly pressurized states.",
-        specs: ["Design Code: ASME Section VIII Standards", "Shell Thickness: 6 mm Base SS 316L", "Fitting Connections: Tri-Clamp Sanitary Ports", "Testing: X-Ray Welded & Hydro-tested"],
-        price: "Price on Request",
-        isFeatured: false
-      },
+     
+   
       {
         slug: "fruit-pulper",
         name: "Commercial Fruit Pulper & Separator",
         img: "/assets/CommercialFruitPulper&Separator.jpg",
         desc: "Dual-stage operational refinement system providing clean visual extraction of dense pulps away from raw skins, seeds, and hard waste fiber.",
         specs: ["Rotor Speed: 960 RPM Optimized", "Sieve Aperture: 0.5mm to 2mm Screens Available", "Yield Efficiency: >94% Extract Retention", "Maintenance: Tool-less Chamber Disassembly"],
+        price: "Price on Request",
+        isFeatured: false
+      },
+      {
+        slug: "mango-pulp-extractor",
+        name: "Industrial Mango Pulp Extractor",
+        img: "/assets/Mangopulp.jpeg",
+        desc: "High-efficiency sanitary stainless steel pulping machine specifically designed to separate smooth fruit pulp from seeds and skins with maximum yield.",
+        specs: ["Application: Mango, papaya, guava, and tomato pulping", "Material: Full Food-Grade Stainless Steel (SS) Body", "Structure: Rigid inclined frame with high-capacity processing chamber", "Operation: Easy maintenance with quick-release sieves"],
         price: "Price on Request",
         isFeatured: false
       }
@@ -208,32 +185,42 @@ export const machineryCategories = [
     name: "Steam Generation & Commercial Kitchens",
     tagline: "High-efficiency thermal units and robust industrial kitchen setups.",
     items: [
+     
       {
-        slug: "non-ibr-wood-fired-steam-boiler",
-        name: "Non IBR Wood Fired Steam Boiler",
-        img: "/assets/TomatoProcessingTurnkeyPlant.jpg",
-        desc: "Cost-efficient, low-pressure solid biomass boiler engineered to generate high-quality dry steam without falling under complex IBR certifications.",
-        specs: ["Evaporation Rate: 100 kg to 200 kg Steam/hr", "Fuel Source: Firewood Blocks, Briquettes, Coal", "Safety Devices: Dual Spring Loaded Safety Valves", "Registration: Zero Government Approval Required"],
+        slug: "electric-steamer-12-tray",
+        name: "Commercial 12-Tray Electric Steamer (50 kg)",
+        img: "/assets/electricsteamer12tre50kgcapacityFullyssbodyParis.jpeg",
+        desc: "Premium institutional multi-tier food steamer constructed with a fully stainless steel body, heavy-duty door latches, and smooth caster wheels for effortless kitchen mobility.",
+        specs: ["Capacity: 50 kg / 12 Heavy-Duty Trays", "Material: Complete Food-Grade Stainless Steel (SS) Body", "Mobility: Industrial swivel caster wheels with brakes", "Application: Bulk steaming of rice, idlis, momos, and vegetables"],
+        price: "65000",
+        isFeatured: false
+      },
+      {
+        slug: "electric-dryer-cabinet-multi-tray",
+        name: "Industrial Electric Cabinet Dryer Series",
+        img: "/assets/ElectricDryer6tre12tre_24tre_60tre_95tre_and220tre.jpeg",
+        desc: "Heavy-insulated batch cabinet drying units equipped with precise electronic control panels, analog multi-meters, and adjustable air-circulation vents.",
+        specs: ["Available Models: 6, 12, 24, 60, 95, and 220 Trays", "Control Interface: Top-mounted analog temperature & voltage meters", "Finish: High-visibility durable protective coating", "Application: Uniform dehydration of food products, snacks, and powders"],
+        price: "Price on Request",
+        isFeatured: false
+      },
+      {
+        slug: "bulk-steamer-boiler-multisource",
+        name: "Industrial 10kg Multi-Source Steamer Vault",
+        img: "/assets/Stemar10kgusetoboilerLPGwoodenandelectric.jpeg",
+        desc: "Highly versatile multi-tier heavy pressure steaming vault designed to utilize steam from external boilers, LPG burners, wood-fired setups, or electric elements.",
+        specs: ["Capacity: 10 kg compact high-density preparation", "Energy Options: Boiler connected, LPG gas, Wooden, or Electric", "Locking Mechanism: Heavy-duty dual mechanical clamp levers", "Base Support: Elevated rigid pillars with floor mounting flaps"],
+        price: "85000",
+        isFeatured: false
+      },
+      {
+        slug: "electric-dryer-95-tray",
+        name: "95-Tray Industrial Electric Dryer (Heavy Duty)",
+        img: "/assets/ElectricDryer95tre.jpeg",
+        desc: "Industrial-grade double-door cabinet dryer featuring dual-column tray racks, a side-mounted control station with digital indicators, and a powerful forced-air induction blower.",
+        specs: ["Capacity: 95 High-capacity reinforced grid trays", "Control Station: Integrated phase indicators, digital temp controller, and safety toggles", "Door System: Heavy-duty dual-gasket insulated swing doors", "Circulation: Integrated high-volume hot air axial fan system"],
         price: "Price on Request",
         isFeatured: true
-      },
-      {
-        slug: "kitchen-equipment",
-        name: "Industrial Prep Kitchen Equipment",
-        img: "/assets/PastaMakingMachineManufacturers.jpg",
-        desc: "Heavy-duty processing sorting utility benches, worktables, and preparation sinks developed out of 16-gauge rigid steel sheets.",
-        specs: ["Build: 16-Gauge SS 304 Panels", "Leg Supports: Bullet-adjustable Floor Pads", "Load Capacity: Structurally Rated for 400 kg", "Under-shelf: Louvered or Solid Storage Configuration"],
-        price: "Price on Request",
-        isFeatured: false
-      },
-      {
-        slug: "hotel-kitchen-equipment",
-        name: "Hotel Kitchen Heavy Modular Range",
-        img: "/assets/CommercialFruitPulper&Separator.jpg",
-        desc: "Premium array of modular high-pressure range burners, deep fryers, griddles, and holding warmers tailored for intense five-star kitchen lines.",
-        specs: ["Burners: High-efficiency Brass Jet Burners", "Gas System: Certified LPG / Natural Gas Compatible", "Finishing: Dull Satin Fingerprint-proof Polish", "Safety: Thermocouple Flame Failure Devices Built-in"],
-        price: "Price on Request",
-        isFeatured: false
       }
     ]
   }

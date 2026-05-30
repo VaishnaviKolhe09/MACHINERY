@@ -1,15 +1,22 @@
 // MachineryCatalog.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Navigation ke liye import kiya
 import { machineryCategories } from '../MachineryData';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, X, MessageSquare, Mail } from 'lucide-react';
 
 const MachineryCatalog = () => {
+  const navigate = useNavigate(); // Router navigation instance
   const [activeCategory, setActiveCategory] = useState("all");
+  // Modal state jo selected machine ka data store karega (Image click par chalega)
+  const [selectedMachine, setSelectedMachine] = useState(null);
 
   const filteredCatalog = activeCategory === "all" 
     ? machineryCategories 
     : machineryCategories.filter(cat => cat.id === activeCategory);
+
+  // --- OWNER DETAILS CONFIGURATION ---
+  const ownerWhatsApp = "919270935931";
+  const ownerEmail = "owner@example.com";
 
   return (
     <div className="bg-[#faf9f6] min-h-screen pt-10 pb-24 overflow-x-hidden">
@@ -58,19 +65,25 @@ const MachineryCatalog = () => {
               {/* Responsive Cards Matrix */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {category.items.map((machine, i) => (
-                  <Link 
-                    to={`/machinery/${machine.slug}`} 
+                  <div 
                     key={i} 
                     className="flex flex-col bg-white border border-slate-200/60 hover:border-amber-500/30 hover:shadow-2xl transition-all duration-300 group rounded-2xl overflow-hidden"
                   >
-                    {/* Visual Render Wrapper */}
-                    <div className="h-56 bg-slate-50 overflow-hidden relative flex items-center justify-center p-4 border-b border-slate-100">
+                    {/* Visual Render Wrapper - IMAGE CLICK: Opens Contact Popup */}
+                    <div 
+                      onClick={() => setSelectedMachine(machine)}
+                      title="Click to view contact options"
+                      className="h-56 bg-slate-50 overflow-hidden relative flex items-center justify-center p-4 border-b border-slate-100 cursor-pointer"
+                    >
                       <img src={machine.img} alt={machine.name} loading="lazy" className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                      <span className="absolute bottom-2 right-2 bg-slate-900/80 text-white text-[8px] font-bold px-2 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        Quick Inquiry
+                      </span>
                     </div>
 
                     {/* Content Meta Space */}
                     <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                      <h3 className="text-base sm:text-lg font-black text-[#0f172a] uppercase tracking-wide group-hover:text-[#f59e0b] transition-colors mb-2 leading-snug break-words">
+                      <h3 className="text-base sm:text-lg font-black text-[#0f172a] uppercase tracking-wide transition-colors mb-2 leading-snug break-words">
                         {machine.name}
                       </h3>
                       
@@ -90,18 +103,80 @@ const MachineryCatalog = () => {
                         ))}
                       </div>
                       
-                      {/* Interactive Call Button Link */}
-                      <span className="text-[9px] sm:text-[10px] font-black text-[#f59e0b] uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition-transform mt-2">
-                        View Details & Request Blueprint <ArrowRight size={12} className="flex-shrink-0" />
-                      </span>
+                      {/* BUTTON CLICK: Navigates to Detail Page */}
+                      <button 
+                        onClick={() => navigate(`/machinery/${machine.slug || machine.id}`)}
+                        className="text-[9px] sm:text-[10px] font-black text-[#f59e0b] hover:text-amber-600 uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition-transform mt-2 text-left w-max"
+                      >
+                        Get Owner Details <ArrowRight size={12} className="flex-shrink-0" />
+                      </button>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* --- OWNER DETAILS MODAL POPUP (Triggered by Image Click) --- */}
+      {selectedMachine && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+          <div className="bg-white w-full max-w-md rounded-2xl overflow-hidden shadow-2xl relative border border-slate-100 animate-scale-up">
+            
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedMachine(null)}
+              className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition-colors"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Modal Header */}
+            <div className="bg-slate-50 p-6 flex flex-col items-center border-b border-slate-100 pt-10">
+              <div className="h-28 w-28 bg-white p-2 rounded-xl border border-slate-200/60 flex items-center justify-center mb-4 shadow-sm">
+                <img src={selectedMachine.img} alt={selectedMachine.name} className="max-w-full max-h-full object-contain" />
+              </div>
+              <span className="text-[#f59e0b] font-black uppercase text-[9px] tracking-widest block mb-1">Inquiry For</span>
+              <h3 className="text-md font-black text-[#0f172a] uppercase text-center tracking-wide px-4 line-clamp-2">
+                {selectedMachine.name}
+              </h3>
+            </div>
+
+            {/* Modal Body / Contact Action Buttons */}
+            <div className="p-6 space-y-4">
+              <p className="text-center text-xs text-slate-500 font-medium">
+                Connect directly with the owner to get blueprints or pricing details.
+              </p>
+
+              {/* WhatsApp Button */}
+              <a 
+                href={`https://wa.me/${ownerWhatsApp}?text=Hi,%20I%20am%20interested%20in%20your%20machinery:%20${encodeURIComponent(selectedMachine.name)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-black uppercase text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-md shadow-green-500/20"
+              >
+                <MessageSquare size={16} fill="white" />
+                Chat on WhatsApp
+              </a>
+
+              {/* Email Button */}
+              <a 
+                href={`mailto:${ownerEmail}?subject=Inquiry%20for%20${encodeURIComponent(selectedMachine.name)}&body=Hi,%20I%20would%20like%20to%20know%20more%20about%20${encodeURIComponent(selectedMachine.name)}.`}
+                className="flex items-center justify-center gap-3 w-full bg-[#0f172a] hover:bg-slate-800 text-white font-black uppercase text-xs tracking-wider py-3.5 rounded-xl transition-all shadow-md shadow-slate-900/20"
+              >
+                <Mail size={16} />
+                Send Email Inquiry
+              </a>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="bg-slate-50 px-6 py-3 border-t border-slate-100 flex justify-between text-[10px] text-slate-400 font-bold uppercase">
+              <span>Email: {ownerEmail}</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
