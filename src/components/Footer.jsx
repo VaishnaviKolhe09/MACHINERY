@@ -42,7 +42,7 @@ const Footer = () => {
                 href="mailto:vsenterprises631@gmail.com?subject=Inquiry%20from%20Website" 
                 className="text-[var(--text-dark)] font-bold tracking-wide hover:text-[var(--primary)] transition-colors inline-block"
               >
-                vsenterprises631@gmail.com
+               m786manmuk1993@gmail.com
               </a>
             </div>
           </div>
