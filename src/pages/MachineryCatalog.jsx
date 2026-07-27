@@ -15,14 +15,14 @@ const MachineryCatalog = () => {
     : machineryCategories.filter(cat => cat.id === activeCategory);
 
   // --- OWNER DETAILS CONFIGURATION ---
-  const ownerWhatsApp = "919270935931";
-  const ownerEmail = "owner@example.com";
+  const ownerWhatsApp = "9930090554";
+  const ownerEmail = "m786manmuk1993@gmail.com";
 
   return (
     <div className="bg-[#faf9f6] min-h-screen pt-10 pb-24 overflow-x-hidden">
       {/* --- HERO SECTION --- */}
       <section className="relative h-[35vh] sm:h-[45vh] flex items-center justify-center bg-[#0f172a] text-center px-4 sm:px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity scale-105" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity scale-105" style={{ backgroundImage: "url('/assets/bg1.jpg')" }}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/40 to-transparent"></div>
         <div className="relative z-10 space-y-3">
           <span className="text-[#f59e0b] font-black uppercase tracking-[0.25em] text-[10px] sm:text-xs block"> HEAVY INDUSTRIAL PORTFOLIO</span>

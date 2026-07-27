@@ -18,7 +18,7 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Check if the select dropdown is choosing the default option
@@ -27,23 +27,50 @@ const Contact = () => {
       return;
     }
 
-    // If all fields are valid (HTML5 validation passed and dropdown selected)
-    setIsSubmitted(true);
-    
-    // Form reset
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      companyName: '',
-      productionOutput: '',
-      message: ''
-    });
+    // --- WEB3FORMS INTEGRATION ---
+    const dataToSend = new FormData();
+    dataToSend.append("access_key", "63638598-9aa2-49da-9cd5-87ec66cdf552");
+    dataToSend.append("firstName", formData.firstName);
+    dataToSend.append("lastName", formData.lastName);
+    dataToSend.append("email", formData.email);
+    dataToSend.append("companyName", formData.companyName);
+    dataToSend.append("productionOutput", formData.productionOutput);
+    dataToSend.append("message", formData.message);
 
-    // Automatically hide success message after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: dataToSend
+      });
+
+      const resData = await response.json();
+
+      if (resData.success) {
+        // If all fields are valid and API call passed
+        setIsSubmitted(true);
+        
+        // Form reset
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          companyName: '',
+          productionOutput: '',
+          message: ''
+        });
+
+        // Automatically hide success message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        alert("Something went wrong. Please try again.");
+        console.log("Error", resData);
+      }
+    } catch (error) {
+      alert("Network error. Please check your connection.");
+      console.log("Network Error", error);
+    }
   };
 
   return (
@@ -88,7 +115,7 @@ const Contact = () => {
                   <Mail className="text-[#f59e0b] flex-shrink-0 mt-0.5" size={16} />
                   <div>
                     <h4 className="font-black text-[11px] uppercase tracking-wider text-[#0f172a]">Email:</h4>
-                    <p className="text-xs text-slate-500 font-bold mt-0.5">vsenterprises631@gmail.com</p>
+                    <p className="text-xs text-slate-500 font-bold mt-0.5">m786manmuk1993@gmail.com</p>
                   </div>
                 </div>
                 <div className="pt-1">

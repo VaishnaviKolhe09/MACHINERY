@@ -7,7 +7,7 @@ const About = () => {
     <div className="bg-[var(--background)] text-[var(--text-dark)] pt-10">
       {/* --- HERO SECTION --- */}
       <section className="relative h-[45vh] flex items-center justify-center bg-[var(--secondary)] text-center px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity" style={{ backgroundImage: "url('/assets/bg2.jpg')" }}></div>
         <div className="relative z-10">
           <span className="text-[var(--primary-light)] font-black uppercase tracking-[0.3em] text-xs block mb-3">INDUSTRIAL PLANT SUPPLIERS</span>
           <h1 className="text-4xl md:text-6xl font-black text-[var(--text-light)] uppercase tracking-tighter italic">FOOD MACHINERY SOLUTIONS</h1>
