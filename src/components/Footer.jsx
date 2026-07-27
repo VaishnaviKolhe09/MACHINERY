@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, ShieldCheck, Cpu } from 'lucide-react';
 // MR Logo image ko import kiya gaya hai
-import mrLogo from '../../public/assets/MRLogo.png'; 
+import mrLogo from '/assets/MRLogo.png'; 
 
 const Footer = () => {
   return (
@@ -39,7 +39,7 @@ const Footer = () => {
             <div className="pt-2 flex flex-col gap-1">
               <span className="text-[10px] uppercase font-black text-[var(--text-muted)] opacity-70">Central Desk Email:</span>
               <a 
-                href="mailto:vsenterprises631@gmail.com?subject=Inquiry%20from%20Website" 
+                href="mailto:m786manmuk1993@gmail.com?subject=Inquiry%20from%20Website" 
                 className="text-[var(--text-dark)] font-bold tracking-wide hover:text-[var(--primary)] transition-colors inline-block"
               >
                m786manmuk1993@gmail.com

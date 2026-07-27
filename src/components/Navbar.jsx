@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 // MR Logo image ko import kiya gaya hai
-import mrLogo from '../../public/assets/MRLogo.png'; 
+import mrLogo from '/assets/MRLogo.png'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

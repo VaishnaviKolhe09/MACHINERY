@@ -1,6 +1,7 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async'; // HelmetProvider import kiya
 import Home from './pages/Home';
 import About from './pages/About';
 import MachineryCatalog from './pages/MachineryCatalog';
@@ -10,26 +11,30 @@ import { Layers } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen overflow-x-hidden flex flex-col bg-[#faf9f6]">
-       <Navbar/>
-       <ScrollToTop/>
-        {/* --- DYNAMIC RENDERING CORE ROUTES --- */}
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/machinery" element={<MachineryCatalog />} />
-            <Route path="/machinery/:slug" element={<MachineryDetail />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen overflow-x-hidden flex flex-col bg-[#faf9f6]">
+          <Navbar />
+          <ScrollToTop />
+          
+          {/* --- DYNAMIC RENDERING CORE ROUTES --- */}
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/machinery" element={<MachineryCatalog />} />
+              <Route path="/machinery/:slug" element={<MachineryDetail />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
 
-        <Footer/>
-      </div>
-    </Router>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 
